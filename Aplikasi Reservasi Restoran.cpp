@@ -40,3 +40,14 @@ void tambahReservasi(vector<Reservasi>& reservasi) {
         cout << "Meja sudah dipesan pada waktu tersebut. Silakan pilih waktu lain." << endl;
     }
 }
+// Fungsi untuk menampilkan daftar reservasi
+void tampilkanReservasi(const vector<Reservasi>& reservasi) {
+    for(size_t i = 0; i < reservasi.size(); i++) {
+        cout << "Reservasi " << i + 1 << endl;
+        cout << "Nama: " << reservasi[i].nama << endl;
+        cout << "Jumlah Orang: " << reservasi[i].jumlahOrang << endl;
+        cout << "Tanggal: " << reservasi[i].tanggal << endl;
+        cout << "Waktu: " << reservasi[i].waktu << endl;
+        cout << "--------------------------" << endl;
+    }
+}
