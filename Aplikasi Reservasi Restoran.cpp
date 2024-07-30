@@ -64,3 +64,11 @@ void hapusReservasi(vector<Reservasi>& reservasi) {
         cout << "Nomor reservasi tidak valid." << endl;
     }
 }
+bool validasiMeja(const vector<Reservasi>& reservasi, const string& tanggal, const string& waktu) {
+    for(const auto& res : reservasi) {
+        if(res.tanggal == tanggal && res.waktu == waktu) {
+            return false; // Meja sudah dipesan pada waktu tersebut
+        }
+    }
+    return true; // Meja tersedia
+}
