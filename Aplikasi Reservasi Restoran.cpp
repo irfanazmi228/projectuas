@@ -51,3 +51,16 @@ void tampilkanReservasi(const vector<Reservasi>& reservasi) {
         cout << "--------------------------" << endl;
     }
 }
+// Fungsi untuk menghapus reservasi
+void hapusReservasi(vector<Reservasi>& reservasi) {
+    int nomor;
+    cout << "Masukkan nomor reservasi yang ingin dihapus: ";
+    cin >> nomor;
+
+    if(nomor > 0 && nomor <= reservasi.size()) {
+        reservasi.erase(reservasi.begin() + nomor - 1);
+        cout << "Reservasi berhasil dihapus." << endl;
+    } else {
+        cout << "Nomor reservasi tidak valid." << endl;
+    }
+}
