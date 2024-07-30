@@ -21,3 +21,22 @@ bool validasiMeja(vector<Reservasi>& reservasi, const string& tanggal, const str
     }
     return true; // Meja tersedia
 }
+// Fungsi untuk menambah reservasi
+void tambahReservasi(vector<Reservasi>& reservasi) {
+    Reservasi newReservasi;
+    cout << "Masukkan nama: ";
+    cin >> newReservasi.nama;
+    cout << "Masukkan jumlah orang: ";
+    cin >> newReservasi.jumlahOrang;
+    cout << "Masukkan tanggal (DD-MM-YYYY): ";
+    cin >> newReservasi.tanggal;
+    cout << "Masukkan waktu (HH:MM): ";
+    cin >> newReservasi.waktu;
+    
+    if(validasiMeja(reservasi, newReservasi.tanggal, newReservasi.waktu)) {
+        reservasi.push_back(newReservasi);
+        cout << "Reservasi berhasil ditambahkan." << endl;
+    } else {
+        cout << "Meja sudah dipesan pada waktu tersebut. Silakan pilih waktu lain." << endl;
+    }
+}
