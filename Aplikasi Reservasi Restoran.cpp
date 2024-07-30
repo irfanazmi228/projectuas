@@ -72,3 +72,38 @@ bool validasiMeja(const vector<Reservasi>& reservasi, const string& tanggal, con
     }
     return true; // Meja tersedia
 }
+// Menu utama
+int main() {
+    vector<Reservasi> reservasi;
+    int pilihan;
+
+    do {
+        cout << "Menu:" << endl;
+        cout << "1. Tambah Reservasi" << endl;
+        cout << "2. Tampilkan Reservasi" << endl;
+        cout << "3. Hapus Reservasi" << endl;
+        cout << "4. Keluar" << endl;
+        cout << "Pilih opsi: ";
+        cin >> pilihan;
+
+        switch(pilihan) {
+            case 1:
+                tambahReservasi(reservasi);
+                break;
+            case 2:
+                tampilkanReservasi(reservasi);
+                break;
+            case 3:
+                hapusReservasi(reservasi);
+                break;
+            case 4:
+                cout << "Terima kasih telah menggunakan aplikasi ini." << endl;
+                break;
+            default:
+                cout << "Pilihan tidak valid." << endl;
+        }
+    } while(pilihan != 4);
+
+    return 0;
+}
+
